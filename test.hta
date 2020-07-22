@@ -1,0 +1,31 @@
+<!DOCTYPE HTA>
+<head>
+<title> TEST THIS </title>
+<HTA:Application
+	APPLICATIONNAME="HTA TEST"
+	SCROLL="yes"
+	SINGLEINSTANCE="yes"
+	WINDOWSTATE="normal"
+
+>
+</head>
+
+<script language="VBScript">
+Set objShell = CreateObject("Wscript.shell")
+	Sub TestSub
+		Msgbox "run this"
+		objShell.run("calc.exe")
+		Window.Close()
+	End Sub
+
+	Sub Mine
+		Msgbox "don't run this"
+		objShell.run("calc.exe")
+		Window.Close()
+	End Sub
+</script>
+
+<body>
+<input type="button" value="Run Script" name="run_button" onClick="TestSub"><p>
+<input type="button" value="Don't Run Script" name="run_abutton" onClick="Mine"><p>
+</body>
