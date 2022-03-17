@@ -6,7 +6,7 @@ I am not responsible for any actions taken by people borrowing my work. Heck awf
 
 I'm attempting to have an hta file connect to a netcat listener via powershell.
 
-The netcat then listener pipes a download cradle into the powershell session.
+The netcat listener then pipes a download cradle into the powershell session.
   Said download cradle pulls a file from my repo here, and initiates a meterpreter session.
   
 Thus far, these steps defeat MalwareBytes pro (MBP) subscription, no problem. Running a meterpreter payload on the test system with MBP doesn't work...
